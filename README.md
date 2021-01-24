@@ -1,0 +1,1 @@
+Java/PostgresQL app source code. Below is documentation in Polish:
