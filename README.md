@@ -161,7 +161,7 @@ Baza danych w projekcie umożliwa użytkownikom na czytanie danych z tabel, a ty
 * 10. Denormalizacja struktury tabel  
 Tabela race_results nie jest znormalizowana do postaci 3NF, ponieważ w obecnej postaci łatwiej odczytywać punkty zdobyte w poszczególnych wyścigach.
 * 11. Zaprojektowanie operacji na danych  
-W odpowiednich klasach Javy. 
+Kod procedur wbudowanych jest w plikach w katalogu sql/ a kwerendy w odpowiednich klasach Javy. 
 
 ## IV. Projekt funkcjonalny
 Strona główna aplikacji, po lewej pasek nawigacji po kliknięciu na poszczególne przyciski zmieniamy karty.
