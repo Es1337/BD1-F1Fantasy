@@ -1,6 +1,6 @@
 Java/PostgresQL app source code. Below is documentation in Polish:
 
-# Projekt na Bazy Danych 1 - F1 Fantasy League
+# Projekt na Bazy Danych 1 - F1 Fantasy League - Michał Kuś
 
 ## I. Projekt koncepcji, założenia
 * 1. Zdefiniowanie tematu projektu  
