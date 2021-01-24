@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import javax.swing.JComboBox;
 
 /**
- *
+ * Pomocnicza klasa obsługująca ładowanie danych do JComboBox'ów
  * @author kusmi
  */
 public class LoadCombo {
@@ -21,6 +21,10 @@ public class LoadCombo {
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
     
+    /**
+     * Funkcja ładująca sezony do JComboBox w porządku od najnowszego
+     * @param comboBox JComboBox do którego mają być załadowane sezony
+     */
     public void loadSeasons(JComboBox<String> comboBox) {
         comboBox.removeAllItems();
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -41,6 +45,11 @@ public class LoadCombo {
         }
     }
     
+    /**
+     * Funkcja ładująca wyścigi do JComboBox w porządku kalendarzowym
+     * @param comboBox JComboBox do którego zostaną załadowane wyścigi
+     * @param year Rok sezonu z którego wyścigi mają być załadowane
+     */
     public void loadRaces(JComboBox<String> comboBox, String year) {
         comboBox.removeAllItems();
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -61,6 +70,11 @@ public class LoadCombo {
         }
     }
     
+    /**
+     * Funkcja ładująca kierowców do JComboBox w porządku alfabetycznym wg nazwiska
+     * @param comboBox JComboBox do któego są ładowani kierowcy
+     * @param year Rok sezonu z którego są ładowani kierowcy
+     */
     public void loadDrivers(JComboBox<String> comboBox, String year) {
         comboBox.removeAllItems();
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -81,6 +95,11 @@ public class LoadCombo {
         }
     }
     
+    /**
+     * Funkcja ładująca zespoły do JComboBox w porządku alfabetycznym wg nazwy zespołu
+     * @param comboBox comboBox JComboBox do którego są ładowane zespoły
+     * @param year Rok sezonu z którego są ładowane zespoły
+     */
     public void loadTeams(JComboBox<String> comboBox, String year) {
         comboBox.removeAllItems();
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -101,6 +120,13 @@ public class LoadCombo {
         }
     }
     
+    /**
+     * Funkcja ładująca przewidywania specjalne do JComboBox 
+     * w porządku alfabetycznym wg kodu przewidywania
+     * Kody DRIV1, DRIV2 i TEAM są odfiltrowywane
+     * @param comboBox comboBox JComboBox do którego są ładowane przewidywania
+     * @param year Rok sezonu z którego są ładowane przewidywania
+     */
     public void loadPredicitions(JComboBox<String> comboBox, String year) {
         comboBox.removeAllItems();
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {

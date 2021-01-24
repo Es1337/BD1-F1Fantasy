@@ -15,7 +15,9 @@ import javax.swing.JOptionPane;
 import my.appUI.AppUI;
 
 /**
- *
+ * Klasa obsługująca logowanie i rejestrację
+ * Pobiera dane użytkownika z tabli users
+ * Wpisuje dane użytkownika do tabeli usres
  * @author kusmi
  */
 public class LoginUI extends javax.swing.JFrame {

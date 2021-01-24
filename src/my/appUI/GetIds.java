@@ -13,14 +13,20 @@ import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Pomocnicza klasa do pobierania ID rekordów z tabel
  * @author kusmi
  */
 public class GetIds {
     private final String dbaseURL = "jdbc:postgresql://localhost:5432/u8kusm";
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
-        
+    
+    /**
+     * Funkcja pobierająca i zwracająca ID zespołu z tabeli teams
+     * @param teamName Nazwa zespołu którego ID ma być pobrane
+     * @param year Rok sezonu do którego ma należeć zespół
+     * @return ID zespołu lub -1, jeśli nie znaleziono
+     */    
     public int getTeamId(String teamName, String year) {
         int teamId = -1;
                 
@@ -43,6 +49,12 @@ public class GetIds {
         return teamId;
     }
     
+    /**
+     * Funkcja pobierająca i zwracająca ID wyścigu z tabeli races
+     * @param location Lokalizacja wyścigu którego ID ma być pobrane
+     * @param year Rok sezonu w którym jest wyścig
+     * @return ID wyścigu lub -1, jeśli nie znaleziono
+     */    
     public int getRaceId(String location, String year) {
         int raceId = -1;
         
@@ -65,6 +77,11 @@ public class GetIds {
         return raceId;
     }
     
+    /**
+     * Funkcja pobierająca i zwracająca ID użytkownika z tabeli users
+     * @param username Nazwa użytkownika którego ID ma być pobrane
+     * @return ID użytkownika lub -1, jeśli nie znaleziono
+     */   
     public int getUserId(String username) {
         int userId = -1;
         
@@ -86,6 +103,12 @@ public class GetIds {
         return userId;
     }
     
+    /**
+     * Funkcja pobierająca i zwracająca ID przewidywania z tabeli available_predictions
+     * @param code Kod przewidywania którego ID ma być pobrane
+     * @param year Rok sezonu dla którego jest przewidywanie
+     * @return ID przewidywania lub -1, jeśli nie znaleziono
+     */   
     public int getPredictionId(String code, String year) {
         int predictionId = -1;
         

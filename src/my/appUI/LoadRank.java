@@ -15,7 +15,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Pomocnicza klasa obsługująca ładowanie widoków klasyfikacji do tabel 
  * @author kusmi
  */
 public class LoadRank {
@@ -23,6 +23,11 @@ public class LoadRank {
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
     
+    /**
+     * Funkcja ładująca widok klasyfikacji kierowców
+     * @param comboBox JComboBox z wybranym rokiem sezonu dla którego jest ładowana klasyfikacja
+     * @param table Tabela do której jest łądowana klasyfikacja
+     */
     public void loadDriversRank(JComboBox comboBox, JTable table) {
         String year = (String) comboBox.getSelectedItem();
         try ( Connection connection
@@ -57,6 +62,11 @@ public class LoadRank {
         }
     }
     
+    /**
+     * Funkcja ładująca widok klasyfikacji zespołów
+     * @param comboBox JComboBox z wybranym rokiem sezonu dla którego jest ładowana klasyfikacja
+     * @param table Tabela do której jest łądowana klasyfikacja
+     */
     public void loadTeamsRank(JComboBox comboBox, JTable table) {
         String year = (String)comboBox.getSelectedItem();
         try ( Connection connection

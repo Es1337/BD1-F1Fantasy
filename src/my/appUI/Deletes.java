@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Pomocnicza klasa obsługująca usuwanie rekordów z tabel
  * @author kusmi
  */
 public class Deletes {
@@ -20,6 +20,11 @@ public class Deletes {
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
     
+    /**
+     * Funkcja usuwająca zespół z tabeli teams i zwraca powodzenie tej operacji
+     * @param teamId ID zespołu do usunięcia
+     * @return True, jeśli zespół usunięty, inaczej false
+     */
     public boolean removeTeam(int teamId) {
         boolean success = false;
         
@@ -41,6 +46,11 @@ public class Deletes {
         return success;
     }
     
+    /**
+     * Funkcja usuwająca kierowcę z tabeli drivers i zwraca powodzenie tej operacji
+     * @param driverId ID kierowcy do usunięcia
+     * @return True, jeśli kierowca usunięty, inaczej false
+     */
     public boolean removeDriver(int driverId) {
         boolean success = false;
         
@@ -62,6 +72,11 @@ public class Deletes {
         return success;
     }
     
+    /**
+     * Funkcja usuwająca wyścig z tabeli races i zwraca powodzenie tej operacji
+     * @param raceId ID zespołu do usunięcia
+     * @return True, jeśli wyścig usunięty, inaczej false
+     */
     public boolean removeRace(int raceId) {
         boolean success = false;
         
@@ -86,6 +101,11 @@ public class Deletes {
         return success;
     }
     
+    /**
+     * Funkcja usuwająca użytkownika z tabeli users i zwraca powodzenie tej operacji
+     * @param username Nazwa użytkownika do usunięcia
+     * @return True, jeśli użytkownik usunięty, inaczej false
+     */
     public boolean removeUser(String username) {
         boolean success = false;
         
@@ -108,6 +128,12 @@ public class Deletes {
         return success;
     }
     
+    /**
+     * Funkcja usuwająca przewidywanie z tabeli user_predictions i zwraca powodzenie tej operacji
+     * @param userId ID użytkownika którego przewidywania są do usunięcia
+     * @param raceId ID wyśćigu dla którego przewidywania są do usunięcia
+     * @return True, jeśli przewidywania usunięte, inaczej false
+     */
     public boolean removePredictions(int userId, int raceId) {
         boolean success = false;
         

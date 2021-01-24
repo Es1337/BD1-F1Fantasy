@@ -34,14 +34,11 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 
 /**
- *
+ *  Główna klasa aplikacji
  * @author kusmi
  */
 public class AppUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AppUI
-     */
     CardLayout cardLayout;
     CardLayout cardResults;
     CardLayout cardForms;
@@ -60,6 +57,11 @@ public class AppUI extends javax.swing.JFrame {
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
 
+    /**
+     * Creates new form AppUI
+     * @param userName Nazwa zalogowanego użytkownika
+     * @param adminPrivileges String "0"/"1" czy użytkownik jest administratorem
+     */
     public AppUI(String userName, String adminPrivileges) {
         initComponents();
         _userName = userName;
@@ -3153,6 +3155,10 @@ public class AppUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfValueCapActionPerformed
 
+    /**
+     * Funkcja do załadowania widoku harmonogramu sezonu do drzewa
+     * @param jComboBox Combo Box z wybranym rokiem sezonu
+     */
     public void loadRacesTree(JComboBox jComboBox) {
         String year = (String) jComboBox.getSelectedItem();
         DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
@@ -3220,6 +3226,12 @@ public class AppUI extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Funkcja pomocnicza odbierająca datę i godzinę od użytkownika
+     * i zwracająca ją jako String w formacie Timestamp 
+     * @param target Nazwa sesji dla której użytkownik ma wprowadzić datę i godzinę
+     * @return String w formacie yyyy-MM-dd hh:mm
+     */
     String getTimestampFor(String target) {
         DateFormat timeFormat = new SimpleDateFormat("hh:mm");
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

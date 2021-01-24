@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Pomocnicza klasa do dodawania rekordów do tabel
  * @author kusmi
  */
 public class Inserts {
@@ -23,6 +23,13 @@ public class Inserts {
     private final String dbUsername = "u8kusm";
     private final String dbPassword = "8kusm";
     
+    /**
+     * Funkcja dodająca sezon do tabeli season i zwracająca powodzenie tej operacji
+     * @param year Rok w którym odbywa się sezon
+     * @param wdc Imię i nazwisko Mistrza Świata Kierowców 
+     * @param wcc Nazwa zespołu Mistrza Świata Konstruktorów
+     * @return True jeśli się udało, inaczej false
+     */
     boolean addSeason(String year, String wdc, String wcc) {
         boolean success = false;
         
@@ -47,6 +54,13 @@ public class Inserts {
         return success;
     }
     
+    /**
+     * Funkcja dodająca zespół do tabeli teams i zwracająca powodzenie tej operacji
+     * @param year Rok w którym wpisany jest zespół
+     * @param teamName Nazwa zespołu
+     * @param points Liczba punktów zespołu
+     * @return True jeśli się udało, inaczej false
+     */
     boolean addTeam(String year, String teamName, int points) {
         boolean success = false;
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -75,6 +89,15 @@ public class Inserts {
         return success;
     }
     
+    /**
+     * Funkcja dodająca kierowcę do tabeli drivers i zwracająca powodzenie tej operacji
+     * @param year Rok w którym wpisany jest zespół do którego należy kierowca
+     * @param fName Imie kierowcy
+     * @param lName Nazwisko kierowcy
+     * @param teamName Nazwa zespołu do którego należy kierowca
+     * @param points Liczba punktów kierowcy
+     * @return True jeśli się udało, inaczej false
+     */
     boolean addDriver(String year, String fName, String lName, String teamName, int points) {
         boolean success = false;
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -88,10 +111,10 @@ public class Inserts {
                 seasonId = rs.getInt(1);
             }
             
-            String getTeamId = "SELECT t.team_id FROM project.teams t, project.season s WHERE t.name = ? AND t.season_id = s.season_id AND s.year = ?";
+            String getTeamId = "SELECT t.team_id FROM project.teams t, project.season s WHERE t.name = ? AND t.season_id = ?";
             pst = connection.prepareStatement(getTeamId);
             pst.setString(1, teamName);
-            pst.setString(2, year);
+            pst.setInt(2, seasonId);
             rs = pst.executeQuery();
 
             int teamId = 0;
@@ -116,6 +139,18 @@ public class Inserts {
         return success;
     }
     
+    /**
+     * Funkcja dodająca wyścig do tabeli races i zwracająca powodzenie tej operacji
+     * @param year Rok w którym odbvywa się wyścig
+     * @param location Lokalizacja wyścigu
+     * @param track Tor na którym odbywa sie wyścig
+     * @param fp1 Data i godzina FP1
+     * @param fp2 Data i godzina FP2
+     * @param fp3 Data i godzina FP3
+     * @param quali Data i godzina kwalifikacji
+     * @param race Data i godzina wyścigu
+     * @return True jeśli się udało, inaczej false
+     */
     boolean addRace(String year, String location, String track, Timestamp fp1, Timestamp fp2, Timestamp fp3, Timestamp quali, Timestamp race) {
         boolean success = false;
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -152,6 +187,15 @@ public class Inserts {
         return success;
     }
     
+    /**
+     * Funkcja dodająca wynik do tabeli race_results i zwracająca powodzenie tej operacji
+     * @param location Lokalizacja wyścigu
+     * @param driverLName Nazwisko kierowcy którego jest wynik
+     * @param position Pozycja kierowcy w wyścigu
+     * @param dnf Kierowca ukończył wyścig - 0, inaczej 1
+     * @param fastestLap Kierowca zdobył nasjszybsze okrążenie 1, inaczej 0
+     * @return True jeśli się udało, inaczej false
+     */
     boolean addResult(String location, String driverLName, int position, int dnf, int fastestLap) {
         boolean success = false;
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) { 
@@ -190,6 +234,14 @@ public class Inserts {
         return success;
     }
     
+    /**
+     * Funkcja dodająca przewidywanie do tabeli user_predictions i zwracająca powodzenie tej operacji
+     * @param raceId ID wyścigu dla którego jest przewidywanie
+     * @param userId ID użytkownika którego jest przewidywanie
+     * @param predictionId ID przewidywania z tabeli available_predictions
+     * @param title Tytuł przewidywania
+     * @return True jeśli się udało, inaczej false
+     */
     public boolean addPrediction(int raceId, int userId, int predictionId, String title) {
         boolean success = false;
         try(Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {

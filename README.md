@@ -21,7 +21,7 @@ Baza danych w projekcie umożliwa użytkownikom na czytanie danych z tabel, a ty
 ![Alt text](https://i.imgur.com/wrFHW7W.jpg)
 
 ## III. Projekt logiczny
-* 7. Projektowanie tabel, kluczy, indeksów  
+* 7. Słowniki danych - tabele  
 <p>
 
 |           | season  |                                            |  
@@ -122,19 +122,86 @@ Baza danych w projekcie umożliwa użytkownikom na czytanie danych z tabel, a ty
 | admin_privileges | INTEGER | Czy użytkownik jest adminem: TAK-1, NIE-0 |
 <p>
 
-* 8. Słowniki danych
+* 8. Słowniki danych - widoki  
+
+|                 |          | Tabela Kierowców |                                                               |
+|-----------------|----------|------------------|---------------------------------------------------------------|
+| Tabela źródłowa | Kolumna  | Typ              | Opis                                                          |
+| -               | Pozycja  | INTEGER          | Wynik funkcji row_number() over(order by drivers.points desc) |
+| drivers         | Kierowca | VARCHAR          | Imię i Nazwisko kierowcy(drivers.fname + drivers.lname)       |
+| teams           | Zespół   | VARCHAR          | Nazwa zespołu (teams.name)                                   |
+| drivers         | Punkty   | INTEGER          | Aktualna ilość punktów kierowcy (drivers.points)              |
+<p>
+
+|                 |         | Tabela Zespołów |                                                             |
+|-----------------|---------|-----------------|-------------------------------------------------------------|
+| Tabela źródłowa | Kolumna | Typ             | Opis                                                        |
+| -               | Pozycja | INTEGER         | Wynik funkcji row_number() over(order by teams.points desc) |
+| teams           | Zespół  | VARCHAR         | Nazwa zespołu (teams.name)                                  |
+| teams           | Punkty  | INTEGER         | Aktualna ilość punktów kierowców zespołu (teams.points)     |
+<p>
+
+|                       |               | Tabela Przewidywań |                                                             |
+|-----------------------|---------------|--------------------|-------------------------------------------------------------|
+| Tabela źródłowa       | Kolumna       | Typ                | Opis                                                        |
+| user_predictions      | Przewidywanie | VARCHAR            | Tytuł przewidywania                                         |
+| available_predictions | Typ           | VARCHAR            | Kod przewidywania                                           |
+| -                     | Wartość       | INTEGER            | Wartość przewidywania(wynik obliczeń z tabeli słownikowych) |
+<p>
+
 * 9. Analiza zależnośći funkcyjnych i normalizacja tabel
-* 10. Denormalizacja struktury tabel
-* 11. Zaprojektowanie operacji na danych
+
+|     | season | teams | drivers | race_results | races | ranking | users | user_predictions | available_predictions |
+|-----|--------|-------|---------|--------------|-------|---------|-------|------------------|-----------------------|
+| 1NF | YES    | YES   | YES     | YES          | YES   | YES     | YES   | YES              | YES                   |
+| 2NF | YES    | YES   | YES     | YES          | YES   | YES     | YES   | YES              | YES                   |
+| 3NF | YES    | YES   | YES     | NO           | YES   | YES     | YES   | YES              | YES                   |
+<p>
+
+* 10. Denormalizacja struktury tabel  
+Tabela race_results nie jest znormalizowana do postaci 3NF, ponieważ w obecnej postaci łatwiej odczytywać punkty zdobyte w poszczególnych wyścigach.
+* 11. Zaprojektowanie operacji na danych  
+W odpowiednich klasach Javy. 
 
 ## IV. Projekt funkcjonalny
-* 12. Interfejsy do prezentacji, edycji i obsługi danych
-* 13. Wizualizacja danych
-* 14. Zdefiniowane panelu sterowania aplikacji
-* 15. Makropolecenia
+Strona główna aplikacji, po lewej pasek nawigacji po kliknięciu na poszczególne przyciski zmieniamy karty.
+![Alt](https://i.imgur.com/QkZOM7v.jpeg)
+Na karcie wyników wybiera się tabele oraz sezony za pomocą rozwijanych menu  
+Karta wyników - Tabela zespołów
+![Alt](https://i.imgur.com/PJ7wRHW.jpeg)
+Karta wyników - Tabela kierowców
+![Alt](https://i.imgur.com/g1DrxlN.jpeg)
+Na karcie harmonogramu wybiera się sezona za pomocą rozwijanego menu, po kliknięciu na pojedynczy wiersz rozwija się dokładny rozkład weekendu wyścigowego  
+Karta harmonogramu sezonu
+![Alt](https://i.imgur.com/g9IXCu1.jpeg)
+Na karcie przewidywań wybiera się wyścig, pierwszego kierowcę, drugiego kierowcę, zespół oraz przewidywanie specjalne dla obecnego sezonu a następnie zatwierdza przyciskiem Dodaj  
+Karta przewidywań
+![Alt](https://i.imgur.com/K0g36DC.jpeg)
+Panel administratora - Nowy Sezon 1/4
+![Alt](https://i.imgur.com/IXwLUBM.jpeg)
+Panel administratora - Nowy Sezon 2/4, Dodawanie zespołów
+![Alt](https://i.imgur.com/aAiiiZW.jpeg)
+Panel administratora - Nowy Sezon 3/4, Dodawanie kierowców
+![Alt](https://i.imgur.com/5EEIXRw.jpeg)
+Panel administratora - Nowy Sezon 4/4, Dodawanie wyscigów
+![Alt](https://i.imgur.com/OAwyGk5.jpeg)
+Panel administratora - Nowy Wynik Wyścigu
+![Alt](https://i.imgur.com/VkFJiy9.jpeg)
+Panel administratora - Nadawanie uprawnień administratora
+![Alt](https://i.imgur.com/2FeOsSz.jpeg)
+Panel administratora - Usuwanie użytkowników
+![Alt](https://i.imgur.com/5zVatcz.jpeg)
+Panel administratora - Modyfikacje zespołów
+![Alt](https://i.imgur.com/o00r627.jpeg)
+Panel administratora - Modyfikacje kierowców
+![Alt](https://i.imgur.com/BSqm1mH.jpeg)
+Panel administratora - Modyfikacje wyścigów
+![Alt](https://i.imgur.com/y1cwU3w.jpeg)
 
 ## V. Dokumentacja
-* 16. Wprwowadzanie danych
-* 17. Dokumentacja użytkownika
-* 18. Opracowanie dokumentacji technicznej
-* 19. Wykaz literatury
+* Wprwowadzanie danych
+    Przykładowe dane zostały wprowadzone do bazy przez autora, są to rzeczywiste dane z historycznych sezonów Formuły 1. Dane do bazy wprowadzane są ręcznie przez odpowiednie interfejsy w Panelu Administratora
+* Dokumentacja użytkownika
+    Sposoby korzystania z aplikacji zostały przedstawione w projekcie funkcjonalnym
+* Opracowanie dokumentacji technicznej
+    Dokumentacja znajduję się w plikach źrółowych w formacie javadoc

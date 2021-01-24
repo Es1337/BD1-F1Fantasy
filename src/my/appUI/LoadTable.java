@@ -14,7 +14,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * Pomocnicza klasa aplikacji obsługująca ładowanie widoków do tabel
  * @author kusmi
  */
 public class LoadTable {
@@ -23,7 +23,12 @@ public class LoadTable {
     private final String dbPassword = "8kusm";
     
     GetIds getIds = new GetIds();
-        
+    
+    /**
+     * Funkcja wyświetlająca widok zespołów w tabeli
+     * @param table Tabela w któej ma być wyświetlony widok
+     * @param year Rok sezonu dla którego mają byż załadowane zespoły
+     */
     public void loadTeamsTable(JTable table, String year) {
         try ( Connection connection
                 = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -55,6 +60,11 @@ public class LoadTable {
         }
     }
     
+    /**
+     * Funkcja wyświetlająca widok kierowców w tabeli
+     * @param table Tabela w któej ma być wyświetlony widok
+     * @param year Rok sezonu dla którego mają być załadowani kierowcy
+     */
     public void loadDriversTable(JTable table, String year) {
         try ( Connection connection
                 = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -87,6 +97,11 @@ public class LoadTable {
         }
     }
     
+    /**
+     * Funkcja wyświetlająca widok wyścigów w tabeli
+     * @param table Tabela w któej ma być wyświetlony widok
+     * @param year Rok sezonu dla którego mają być załadowane wyścigi
+     */
     public void loadRacesTable(JTable table, String year) {
         try ( Connection connection
                 = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
@@ -123,6 +138,12 @@ public class LoadTable {
         }
     }
     
+    /**
+     * Funkcja wyświetlająca widok wyników w tabeli
+     * @param table Tabela dla której w której ma być wyświetlony widok
+     * @param location Lokalizacja wyścigu któego wyniki mają być wyświetlone
+     * @param year Rok sezonu w którym odbywa się wyścig
+     */
     public void loadResultsTable(JTable table, String location, String year) {
         int raceId = getIds.getRaceId(location, year);
         try ( Connection connection
@@ -163,6 +184,11 @@ public class LoadTable {
   
     }
     
+    /**
+     * Funkcja wyszukująca użytkowników i wyświetlająca ich widok w tabeli
+     * @param table Tabela w któej ma być wyświetlony widok
+     * @param userString Fragment nazwy użytkownika który ma zostać znaleziony
+     */
     public void findUsers(JTable table, String userString) {        
         try ( Connection connection = DriverManager.getConnection(dbaseURL, dbUsername, dbPassword)) {
             String getUser = "SELECT u.email, u.fname || ' ' || u.lname, u.admin_privileges FROM project.users u WHERE u.email LIKE ?";
@@ -194,6 +220,13 @@ public class LoadTable {
         }
     }
     
+    /**
+     * Funkcja wyświetlająca widok przewidywań w tabeli 
+     * @param table Tabela w której ma być wyświetlony widok
+     * @param username Nazwa użytkownika którego przewidywania będą wyświetlone
+     * @param location Lokalizacja wyścigu dla którego przewidywania mają być wyświetlone
+     * @param year Rok sezonu w którym odbywa się wyścig
+     */
     public void loadPredictionsTable(JTable table, String username, String location, String year) {
         int predValue;
         int raceId = getIds.getRaceId(location, year);
