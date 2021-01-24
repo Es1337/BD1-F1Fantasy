@@ -199,9 +199,9 @@ Panel administratora - Modyfikacje wyścigów
 ![Alt](https://i.imgur.com/y1cwU3w.jpeg)
 
 ## V. Dokumentacja
-* Wprwowadzanie danych
+* Wprwowadzanie danych  
     Przykładowe dane zostały wprowadzone do bazy przez autora, są to rzeczywiste dane z historycznych sezonów Formuły 1. Dane do bazy wprowadzane są ręcznie przez odpowiednie interfejsy w Panelu Administratora
-* Dokumentacja użytkownika
+* Dokumentacja użytkownika  
     Sposoby korzystania z aplikacji zostały przedstawione w projekcie funkcjonalnym
-* Opracowanie dokumentacji technicznej
+* Opracowanie dokumentacji technicznej  
     Dokumentacja znajduję się w plikach źrółowych w formacie javadoc
