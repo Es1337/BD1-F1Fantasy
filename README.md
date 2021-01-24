@@ -21,7 +21,14 @@ Baza danych w projekcie umożliwa użytkownikom na czytanie danych z tabel, a ty
 ![Alt text](https://i.imgur.com/wrFHW7W.jpg)
 
 ## III. Projekt logiczny
-* 7. Projektowanie tabel, kluczy, indeksów
+* 7. Projektowanie tabel, kluczy, indeksów  
+|           | season  |                                            |  
+|-----------|---------|--------------------------------------------|  
+| Kolumna   | Typ     | Opis                                       |  
+| season_id | INTEGER | Klucz główny                               |  
+| year      | VARCHAR | Unikalny rok w którym odbywa się sezon     |  
+| wdc       | VARCHAR | Imie i nazwisko Mistrza Świata Kierowców   |  
+| wcc       | VARCHAR | Nazwa zespołu Mistrza Świata Konstruktorów |  
 * 8. Słowniki danych
 * 9. Analiza zależnośći funkcyjnych i normalizacja tabel
 * 10. Denormalizacja struktury tabel
