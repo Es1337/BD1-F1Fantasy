@@ -18,7 +18,7 @@ Java/PostgresQL app source code. Below is documentation in Polish:
 * 4. Budowa i analiza diagramu przepływu danych DFD  
 Baza danych w projekcie umożliwa użytkownikom na czytanie danych z tabel, a tym którzy mają uprawnienia administratora na wprowadzanie, więc diagram przepływu danych nie ma praktycznego zastosowania.
 * 5. Zdefiniowanie encji oraz ich atrybutów,  Zaprojektowanie relacji pomiędzy encjami (Diagram ERD)
-![Alt text][https://i.imgur.com/wrFHW7W.jpg]
+![Alt text](https://i.imgur.com/wrFHW7W.jpg)
 
 ## III. Projekt logiczny
 * 7. Projektowanie tabel, kluczy, indeksów
