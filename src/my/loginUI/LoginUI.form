@@ -154,10 +154,10 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="lPasswordLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="lUsernameLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="lUsernameLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -195,11 +195,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                       <ComponentRef name="lUsernameField"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Username:"/>
+                    <Property name="text" type="java.lang.String" value="Nazwa u&#x17c;ytkownika:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lPasswordLabel">
@@ -210,11 +210,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
                     <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                       <ComponentRef name="lPasswordField"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Password:"/>
+                    <Property name="text" type="java.lang.String" value="Has&#x142;o:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="lUsernameField">
@@ -291,7 +291,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f8" green="f8" red="f8" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Login"/>
+                    <Property name="text" type="java.lang.String" value="Zaloguj"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true">
@@ -315,7 +315,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Register"/>
+                    <Property name="text" type="java.lang.String" value="Rejestracja"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true">
@@ -410,7 +410,7 @@
                       <Color blue="f8" green="f8" red="f8" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Register"/>
+                    <Property name="text" type="java.lang.String" value="Rejestracja"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -426,10 +426,10 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel3" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="usernameLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="usernameLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -467,8 +467,8 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Username:"/>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Nazwa u&#x17c;ytkownika:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
@@ -479,8 +479,8 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Password:"/>
+                    <Property name="horizontalAlignment" type="int" value="11"/>
+                    <Property name="text" type="java.lang.String" value="Has&#x142;o:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="usernameField">
@@ -560,7 +560,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="f7" green="f7" red="f7" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Register"/>
+                    <Property name="text" type="java.lang.String" value="Zarejestruj"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true">
@@ -584,7 +584,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="35" green="35" red="dc" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Login"/>
+                    <Property name="text" type="java.lang.String" value="Logowanie"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                         <LineBorder roundedCorners="true">

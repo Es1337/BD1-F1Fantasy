@@ -101,15 +101,15 @@ public class LoginUI extends javax.swing.JFrame {
 
         lUsernameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lUsernameLabel.setForeground(new java.awt.Color(220, 53, 53));
-        lUsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lUsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lUsernameLabel.setLabelFor(lUsernameField);
-        lUsernameLabel.setText("Username:");
+        lUsernameLabel.setText("Nazwa użytkownika:");
 
         lPasswordLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lPasswordLabel.setForeground(new java.awt.Color(220, 53, 53));
-        lPasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lPasswordLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lPasswordLabel.setLabelFor(lPasswordField);
-        lPasswordLabel.setText("Password:");
+        lPasswordLabel.setText("Hasło:");
 
         lUsernameField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lUsernameField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(220, 53, 53), 1, true));
@@ -122,10 +122,10 @@ public class LoginUI extends javax.swing.JFrame {
         lInputPanelLayout.setHorizontalGroup(
             lInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lInputPanelLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addGap(85, 85, 85)
                 .addGroup(lInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lUsernameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(lInputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lUsernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,7 +151,7 @@ public class LoginUI extends javax.swing.JFrame {
         lSubmitButton.setBackground(new java.awt.Color(220, 53, 53));
         lSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lSubmitButton.setForeground(new java.awt.Color(248, 248, 248));
-        lSubmitButton.setText("Login");
+        lSubmitButton.setText("Zaloguj");
         lSubmitButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(220, 53, 53), 1, true));
         lSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +162,7 @@ public class LoginUI extends javax.swing.JFrame {
         lRegisterButton.setBackground(new java.awt.Color(248, 248, 248));
         lRegisterButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lRegisterButton.setForeground(new java.awt.Color(220, 53, 53));
-        lRegisterButton.setText("Register");
+        lRegisterButton.setText("Rejestracja");
         lRegisterButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(220, 53, 53), 1, true));
         lRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +224,7 @@ public class LoginUI extends javax.swing.JFrame {
         titleLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         titleLabel.setForeground(new java.awt.Color(248, 248, 248));
         titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleLabel.setText("Register");
+        titleLabel.setText("Rejestracja");
 
         javax.swing.GroupLayout titlePanelLayout = new javax.swing.GroupLayout(titlePanel);
         titlePanel.setLayout(titlePanelLayout);
@@ -247,13 +247,13 @@ public class LoginUI extends javax.swing.JFrame {
 
         usernameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         usernameLabel.setForeground(new java.awt.Color(220, 53, 53));
-        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        usernameLabel.setText("Username:");
+        usernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        usernameLabel.setText("Nazwa użytkownika:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(220, 53, 53));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Password:");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel3.setText("Hasło:");
 
         usernameField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         usernameField.setForeground(new java.awt.Color(220, 53, 53));
@@ -267,10 +267,10 @@ public class LoginUI extends javax.swing.JFrame {
         inputPanelLayout.setHorizontalGroup(
             inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(inputPanelLayout.createSequentialGroup()
-                .addGap(102, 102, 102)
+                .addGap(86, 86, 86)
                 .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usernameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -296,7 +296,7 @@ public class LoginUI extends javax.swing.JFrame {
         registerButton.setBackground(new java.awt.Color(220, 53, 53));
         registerButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         registerButton.setForeground(new java.awt.Color(247, 247, 247));
-        registerButton.setText("Register");
+        registerButton.setText("Zarejestruj");
         registerButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(220, 53, 53), 1, true));
         registerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -307,7 +307,7 @@ public class LoginUI extends javax.swing.JFrame {
         loginButton.setBackground(new java.awt.Color(247, 247, 247));
         loginButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         loginButton.setForeground(new java.awt.Color(220, 53, 53));
-        loginButton.setText("Login");
+        loginButton.setText("Logowanie");
         loginButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(220, 53, 53), 1, true));
         loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
